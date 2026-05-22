@@ -412,8 +412,10 @@ def pipeline_habitos_por_usuario(db):
 # MAIN — Ejecuta todo y muestra resultados formateados
 # ─────────────────────────────────────────────────────────────
 
-def main():
-    db = get_db()
+def main(db=None):
+    # Si se llama desde main.py, reutiliza la conexión existente
+    if db is None:
+        db = get_db()
 
     print("\n" + "═" * 60)
     print("  FASE 2 — SoundWave: Aggregation Framework + Índices ESR")
