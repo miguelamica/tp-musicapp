@@ -240,7 +240,7 @@ def run(uri="mongodb://localhost:27017/", db_name="soundwave"):
             "plan": random.choice(["free", "free", "premium"]),
             "following_ids": random.sample(artist_ids, k=random.randint(1, 3)),
             "play_history": play_history,
-            "created_at": ts(random.randint(30, 700)),
+            "created_at": ts(random.randint(2, 700)),
         })
 
     db.users.insert_many(users)
